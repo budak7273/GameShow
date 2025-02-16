@@ -17,17 +17,17 @@ void AWebhookSubsystem::SendJsonToWebhook(FString JsonString) {
 	HttpRequest->SetURL(config.WebhookURL);
 	HttpRequest->SetContentAsString(JsonString);
 
-	//UE_LOGFMT(LogGameShow, Log, "JSON Payload: {JsonString}", JsonString);
+	UE_LOGFMT(LogGameShow, VeryVerbose, "JSON Payload: {JsonString}", JsonString);
 
 	HttpRequest->OnProcessRequestComplete().BindLambda([](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
 	{
 		if (bWasSuccessful)
 		{
-			UE_LOG(LogTemp, Log, TEXT("Webhook response: %s"), *Response->GetContentAsString());
+			UE_LOG(LogGameShow, Log, TEXT("Webhook response: %s"), *Response->GetContentAsString());
 		}
 		else
 		{
-			UE_LOG(LogTemp, Error, TEXT("Failed to send data to webhook"));
+			UE_LOG(LogGameShow, Error, TEXT("Failed to send data to webhook"));
 		}
 	});
 
