@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 0,
-	"VersionName": "0.4.0",
+	"VersionName": "0.5.0",
 	"FriendlyName": "Game Show Helpers",
 	"Description": "Send events to an external API via in-game interactions",
 	"Category": "Modding",
@@ -28,6 +28,6 @@
 			"SemVersion": "^3.10.0"
 		}
 	],
-	"SemVersion": "0.4.0",
+	"SemVersion": "0.5.0",
 	"GameVersion": ">=383729"
 }
