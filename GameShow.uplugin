@@ -1,12 +1,12 @@
 {
 	"FileVersion": 3,
-	"Version": 0,
-	"VersionName": "0.5.0",
-	"FriendlyName": "Game Show Helpers",
+	"Version": 1,
+	"VersionName": "1.0.0-pre1",
+	"FriendlyName": "Event Utilities",
 	"Description": "Send events to an external API via in-game interactions",
 	"Category": "Modding",
 	"CreatedBy": "Robb, DarthPorisius, Pleasure",
-	"CreatedByURL": "",
+	"CreatedByURL": "https://github.com/budak7273/GameShow/",
 	"DocsURL": "",
 	"MarketplaceURL": "",
 	"SupportURL": "",
@@ -28,6 +28,6 @@
 			"SemVersion": "^3.10.0"
 		}
 	],
-	"SemVersion": "0.5.0",
+	"SemVersion": "1.0.0-pre1",
 	"GameVersion": ">=383729"
 }
