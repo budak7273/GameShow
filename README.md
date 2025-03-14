@@ -3,7 +3,7 @@
 Send webhook messages to an external web server by interacting with in-game buildings.
 Full multiplayer support - use it to implement quizzes, parkour courses, race tracks, or more!
 
-![Button orientation examples](TODO)
+![Button orientation examples](https://raw.githubusercontent.com/budak7273/GameShow/refs/heads/main/Images/Screenshots/ButtonsAndCart.png)
 
 Created by volunteers at the request of the **[Satisfactory Events](https://www.twitch.tv/satisfactoryevents)** group,
 but the mod is usable by anyone.
@@ -19,24 +19,25 @@ Adds 2 devices that respond to player input/presence:
 
 Players can interact (use) to trigger, or trigger via any type of player-instigated damage.
 
-![Button damage](TODO)
+![Button damage](https://raw.githubusercontent.com/budak7273/GameShow/refs/heads/main/Images/Screenshots/ButtonDamageTrigger.png)
 
 ### Sensor Foundation
 
 Detects when players (and player-operated vehicles) enter a two-foundation (8m x 8m x 8m) area above the building. Snapping is weird, sorry.
 Use mods like [Infinite Nudge](https://ficsit.app/mod/InfiniteNudge) or [Rearchitector Redux](https://ficsit.app/mod/RearchitectorRedux) to help with positioning it.
 
-![Sensor foundation](TODO)
+![Sensor foundation](https://raw.githubusercontent.com/budak7273/GameShow/refs/heads/main/Images/Screenshots/SensorFoundation.png)
 
 ### Device Configuration
 
-To configure what the devices do, use the `/gameShowEdit` chat command to enter editor mode.
+Each built copy of a device can be configured separately.
+To configure what a device does, first use the `/gameShowEdit` chat command to enter editor mode.
 In editor mode, interacting with the devices will open a configuration screen.
 Run the command again to exit editor mode.
 
-![Device configuration](TODO)
+![Device configuration](https://raw.githubusercontent.com/budak7273/GameShow/refs/heads/main/Images/Screenshots/FoundationConfiguration.png)
 
-To use a name other than your player display name, run the `/gameShowName <name>` chat command.
+To use a name other than your player display name for the purpose of `%PLAYER_ID%`, run the `/gameShowName <name>` chat command.
 This value is not saved and must be re-set upon every multiplayer rejoin.
 To reset back to your player display name, run `/gameShowName CLEAR`.
 
