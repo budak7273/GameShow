@@ -1,7 +1,7 @@
 # Event Utilities
 
 Send webhook messages to an external web server by interacting with in-game buildings.
-Full multiplayer support - use it to implement quizzes, parkour courses, race tracks, or more!
+Full multiplayer support - use it to implement quizzes, parkour courses, race tracks, and more!
 
 ![Button orientation examples](https://raw.githubusercontent.com/budak7273/GameShow/refs/heads/main/Images/Screenshots/ButtonsAndCart.png)
 
@@ -38,8 +38,8 @@ Run the command again to exit editor mode.
 ![Device configuration](https://raw.githubusercontent.com/budak7273/GameShow/refs/heads/main/Images/Screenshots/FoundationConfiguration.png)
 
 To use a name other than your player display name for the purpose of `%PLAYER_ID%`, run the `/gameShowName <name>` chat command.
-This value is not saved and must be re-set upon every multiplayer rejoin.
-To reset back to your player display name, run `/gameShowName CLEAR`.
+This value is not saved and must be set upon every multiplayer rejoin.
+To swap back to using your player display name, run `/gameShowName CLEAR`.
 
 ## Mod Configuration
 
@@ -72,4 +72,4 @@ All message payloads are logged to the game's
 
 - Robb (Buildings and UI): _If you enjoy my work, please consider donating to my [completely optional tip jar](https://ko-fi.com/robb4)._
 - DarthPorisius (Webhook functionality): Not currently accepting donations.
-- Pleasure (Button model and textures): TODO
+- Pleasure (Button model and textures): Not currently accepting donations.
