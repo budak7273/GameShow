@@ -58,6 +58,8 @@ public class GameShow : ModuleRules
 			"DummyHeaders",
 		});
 
+		PublicDependencyModuleNames.Add("FactoryDedicatedServer");
+		
 		if (Target.Type == TargetRules.TargetType.Editor) {
 			PublicDependencyModuleNames.AddRange(new string[] {/*"OnlineBlueprintSupport",*/ "AnimGraph"});
 		}

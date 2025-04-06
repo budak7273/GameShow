@@ -6,6 +6,8 @@
 #include "Interfaces/IHttpResponse.h"
 #include "Json.h"
 #include "JsonObjectConverter.h"
+#include "FGServerAPIManager.h"
+#include "FGServerSubsystem.h"
 #include "Config/WebhookStruct.h"
 
 void AWebhookSubsystem::SendJsonToWebhook(FString JsonString) {
@@ -33,3 +35,37 @@ void AWebhookSubsystem::SendJsonToWebhook(FString JsonString) {
 
 	HttpRequest->ProcessRequest();
 };
+
+void AWebhookSubsystem::SammiHandler(FString JsonInput)
+{
+	UE_LOG(LogTemp, Log, TEXT("SammiHandler called with input: %s"), *JsonInput);
+}
+
+void AWebhookSubsystem::RegisterRoute(UFGServerAPIManager *Manager, const char *Name) {
+	auto Handler = FFGRequestHandlerRegistration();
+	Handler.HandlerObject = this;
+	Handler.HandlerFunction = this->FindFunction(Name);
+	Handler.FunctionName = FName(Name);
+	Handler.PrivilegeLevel = EPrivilegeLevel::None;
+	Manager->mRegisteredHandlers.Add(FString(Name), Handler);
+}
+
+void AWebhookSubsystem::PostInitialize() {
+	const auto World = this->GetWorld();
+	if (World == nullptr)
+		return;
+
+	const auto GameInstance = World->GetGameInstance();
+	if (GameInstance == nullptr)
+		return;
+
+	const auto Subsystem = GameInstance->GetSubsystem<UFGServerSubsystem>();
+	if (Subsystem == nullptr)
+		return;
+
+	const auto ServerAPIManager = Subsystem->GetServerAPIManager();
+	if (ServerAPIManager == nullptr)
+		return;
+
+	this->RegisterRoute(ServerAPIManager, "SammiHandler");
+}
