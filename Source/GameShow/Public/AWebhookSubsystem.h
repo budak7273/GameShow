@@ -1,8 +1,9 @@
 ﻿#pragma once
 
+
 #include "GameShow.h"
+#include "UGameShowController.h"
 #include "Subsystem/ModSubsystem.h"
-#include "FactoryDedicatedServer/Public/FGServerSubsystem.h"
 #include "FactoryDedicatedServer/Public/Networking/FGServerAPIManager.h"
 #include "AWebhookSubsystem.generated.h"
 
@@ -18,9 +19,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SendJsonToWebhook(FString JsonString);
 
-	UFUNCTION(BlueprintCallable)
-	void SammiHandler(FString JsonInput);
-
-private:	
-	void RegisterRoute(UFGServerAPIManager *Manager, const char *Name);
+	UPROPERTY()
+	UGameShowController *Controller;
 };
+

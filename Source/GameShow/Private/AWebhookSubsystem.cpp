@@ -8,6 +8,7 @@
 #include "JsonObjectConverter.h"
 #include "FGServerAPIManager.h"
 #include "FGServerSubsystem.h"
+#include "UGameShowController.h"
 #include "Config/WebhookStruct.h"
 
 void AWebhookSubsystem::SendJsonToWebhook(FString JsonString) {
@@ -36,36 +37,32 @@ void AWebhookSubsystem::SendJsonToWebhook(FString JsonString) {
 	HttpRequest->ProcessRequest();
 };
 
-void AWebhookSubsystem::SammiHandler(FString JsonInput)
-{
-	UE_LOG(LogTemp, Log, TEXT("SammiHandler called with input: %s"), *JsonInput);
-}
-
-void AWebhookSubsystem::RegisterRoute(UFGServerAPIManager *Manager, const char *Name) {
-	auto Handler = FFGRequestHandlerRegistration();
-	Handler.HandlerObject = this;
-	Handler.HandlerFunction = this->FindFunction(Name);
-	Handler.FunctionName = FName(Name);
-	Handler.PrivilegeLevel = EPrivilegeLevel::None;
-	Manager->mRegisteredHandlers.Add(FString(Name), Handler);
-}
-
 void AWebhookSubsystem::InitializeFunctions() {
 	const auto World = this->GetWorld();
+	this->Controller = NewObject<UGameShowController>();
+
 	if (World == nullptr)
 		return;
 
+	UE_LOGFMT(LogGame, Display, "World found");
+	
 	const auto GameInstance = World->GetGameInstance();
 	if (GameInstance == nullptr)
 		return;
 
+	UE_LOGFMT(LogGame, Display, "GameInstance found");
+	
 	const auto Subsystem = GameInstance->GetSubsystem<UFGServerSubsystem>();
 	if (Subsystem == nullptr)
 		return;
 
+	UE_LOGFMT(LogGame, Display, "UFGServerSubsystem found");
+	
 	const auto ServerAPIManager = Subsystem->GetServerAPIManager();
 	if (ServerAPIManager == nullptr)
 		return;
 
-	this->RegisterRoute(ServerAPIManager, "SammiHandler");
+	ServerAPIManager->RegisterRequestHandler(this->Controller);
+	UE_LOGFMT(LogGame, Display, "Controller registration called");
+
 }
