@@ -12,7 +12,8 @@ class GAMESHOW_API AWebhookSubsystem : public AModSubsystem
 	GENERATED_BODY()
 public:
 
-	virtual void PostInitialize();
+	UFUNCTION(BlueprintCallable)
+	void InitializeFunctions();
 	
 	UFUNCTION(BlueprintCallable)
 	void SendJsonToWebhook(FString JsonString);

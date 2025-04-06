@@ -50,7 +50,7 @@ void AWebhookSubsystem::RegisterRoute(UFGServerAPIManager *Manager, const char *
 	Manager->mRegisteredHandlers.Add(FString(Name), Handler);
 }
 
-void AWebhookSubsystem::PostInitialize() {
+void AWebhookSubsystem::InitializeFunctions() {
 	const auto World = this->GetWorld();
 	if (World == nullptr)
 		return;
