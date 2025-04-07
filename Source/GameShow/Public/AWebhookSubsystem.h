@@ -2,7 +2,7 @@
 
 
 #include "GameShow.h"
-#include "UGameShowController.h"
+#include "GameShowController.h"
 #include "Subsystem/ModSubsystem.h"
 #include "FactoryDedicatedServer/Public/Networking/FGServerAPIManager.h"
 #include "AWebhookSubsystem.generated.h"
@@ -20,6 +20,6 @@ public:
 	void SendJsonToWebhook(FString JsonString);
 
 	UPROPERTY()
-	UGameShowController *Controller;
+	UGameShowController* Controller;
 };
 

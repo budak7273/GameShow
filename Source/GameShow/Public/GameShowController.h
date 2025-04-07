@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include "FGServerControllerBase.h"
-#include "UGameShowController.generated.h"
+#include "GameShowController.generated.h"
 
 class UFGUserSetting;
 struct FFGServerJoinDataResponse;

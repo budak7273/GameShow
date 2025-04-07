@@ -8,7 +8,7 @@
 #include "JsonObjectConverter.h"
 #include "FGServerAPIManager.h"
 #include "FGServerSubsystem.h"
-#include "UGameShowController.h"
+#include "GameShowController.h"
 #include "Config/WebhookStruct.h"
 
 void AWebhookSubsystem::SendJsonToWebhook(FString JsonString) {

@@ -1,4 +1,4 @@
-﻿#include "UGameShowController.h"
+﻿#include "GameShowController.h"
 
 #include "FGDSSharedTypes.h"
 #include "Logging/StructuredLog.h"
